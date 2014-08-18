@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2014 Mahdi-Rom
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <!-- Title -->
+    <string name="touch_control_title">Advanced</string>
+
+    <!-- Double tap to wake -->
+    <string name="doubletap2wake_title">Double tap to wake</string>
+    <string name="doubletap2wake_summary">Double tap anywhere to wake the screen</string>
+
+    <!-- Sweep to wake -->
+    <string name="sweep2wake_title">Sweep to wake</string>
+    <string name="sweep2wake_summary">Sweep from left to right to wake the screen</string>
+
+    <!-- Sweep to sleep -->
+    <string name="sweep2sleep_title">Sweep to sleep</string>
+    <string name="sweep2sleep_summary">Sweep from left to right to go to sleep</string>
+
+    <!-- Powerkey suspend -->
+    <string name="powerkeysuspend_title">Power key suspend</string>
+    <string name="powerkeysuspend_summary">Using the power key to turn your screen off will temporarily disable all options</string>
+
+    <!-- Wake timeout -->
+    <string name="wake_timeout_title">Wake timeout</string>
+    <string name="wake_timeout_summary">After this timeout options will be temporarily disabled</string>
+
+    <!-- Vibration strength -->
+    <string name="vibration_strength_title">Vibration strength</string>
+    <string name="vibration_strength_summary">Adjust the haptic feedback strength</string>
+
+    <!-- Touch wake -->
+    <string name="touchwake_title">Touch wake</string>
+    <string name="touchwake_summary">If enabled, you will be able to turn the screen on if it times out</string>
+
+    <!-- Touch wake timeout -->
+    <string name="touchwake_timeout_title">Touch wake timeout</string>
+    <string name="touchwake_timeout_summary">After this timeout options will be temporarily disabled</string>
+
+    <!-- Warning dialog -->
+    <string name="touch_control_warning_title">Proceed with Caution</string>
+    <string name="touch_control_warning">These settings have the potential to cause higher than normal idle battery drain.\n\nWe request you do not complain about battery life if any of these settings have been enabled.</string>
+
+    <!-- General strings -->
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
+
+</resources>

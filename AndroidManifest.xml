@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="com.mahdi.touchcontrol"
+          android:versionCode="1"
+          android:versionName="1" >
+
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.ACCESS_SUPERUSER" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <uses-sdk
+            android:minSdkVersion="18"
+            android:targetSdkVersion="19" />
+
+    <application
+            android:icon="@android:drawable/sym_def_app_icon"
+            android:label="TouchControl"
+            >
+
+        <activity android:name=".settings.TouchControlActivity"
+            android:icon="@drawable/app_icon"
+            android:label="@string/touch_control_title"
+            android:theme="@style/Theme.Settings"
+            android:configChanges="orientation|screenSize">
+          <intent-filter>
+                <action android:name="com.mahdi.action.LAUNCH_TOUCH_CONTROL_SETTINGS" />
+          </intent-filter>
+          <meta-data
+                android:name="com.android.settings.title"
+                android:resource="@string/touch_control_title"/>
+        </activity>
+
+        <receiver android:name="com.mahdi.touchcontrol.service.BootReceiver" android:enabled="true">
+          <intent-filter android:priority="1000">
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+          </intent-filter>
+        </receiver>
+
+        <service android:name="com.mahdi.touchcontrol.service.BootService" />
+
+    </application>
+
+</manifest>
