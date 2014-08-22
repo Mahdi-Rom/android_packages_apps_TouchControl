@@ -57,8 +57,8 @@ public class TouchControlSettings extends PreferenceFragment
 
     private ListPreference mDoubletap2Wake;
     private CheckBoxPreference mDoubletap2Wake2;
-    private CheckBoxPreference mSweep2Wake;
-    private CheckBoxPreference mSweep2Sleep;
+    private ListPreference mSweep2Wake;
+    private ListPreference mSweep2Sleep;
     private CheckBoxPreference mPowerkeySuspend;
     private SeekBarPreference mWakeTimeout;
     private SeekBarPreference mVibrationStrength;
@@ -102,8 +102,8 @@ public class TouchControlSettings extends PreferenceFragment
 
         mDoubletap2Wake = (ListPreference) prefs.findPreference(PREF_DOUBLETAP2WAKE);
         mDoubletap2Wake2 = (CheckBoxPreference) prefs.findPreference(PREF_DOUBLETAP2WAKE2);
-        mSweep2Wake = (CheckBoxPreference) prefs.findPreference(PREF_SWEEP2WAKE);
-        mSweep2Sleep = (CheckBoxPreference) prefs.findPreference(PREF_SWEEP2SLEEP);
+        mSweep2Wake = (ListPreference) prefs.findPreference(PREF_SWEEP2WAKE);
+        mSweep2Sleep = (ListPreference) prefs.findPreference(PREF_SWEEP2SLEEP);
         mPowerkeySuspend = (CheckBoxPreference) prefs.findPreference(PREF_POWERKEYSUSPEND);
         mWakeTimeout = (SeekBarPreference) prefs.findPreference(PREF_WAKE_TIMEOUT);
         mVibrationStrength = (SeekBarPreference) prefs.findPreference(PREF_VIBRATION_STRENGTH);
@@ -129,18 +129,22 @@ public class TouchControlSettings extends PreferenceFragment
         }
 
         if (!new File(S2W_FILE).exists()) {
-            CheckBoxPreference hideCat = (CheckBoxPreference) findPreference(PREF_SWEEP2WAKE);
+            ListPreference hideCat = (ListPreference) findPreference(PREF_SWEEP2WAKE);
             getPreferenceScreen().removePreference(hideCat);
         } else {
-            mSweep2Wake.setChecked(FileUtils.readOneLine(S2W_FILE).equals("1"));
+            int sweep2Wake = Integer.parseInt(FileUtils.readOneLine(S2W_FILE));
+            mSweep2Wake.setValue(String.valueOf(sweep2Wake));
+            mSweep2Wake.setSummary(mSweep2Wake.getEntry());
             mSweep2Wake.setOnPreferenceChangeListener(this);
         }
 
         if (!new File(S2S_FILE).exists()) {
-            CheckBoxPreference hideCat = (CheckBoxPreference) findPreference(PREF_SWEEP2SLEEP);
+            ListPreference hideCat = (ListPreference) findPreference(PREF_SWEEP2SLEEP);
             getPreferenceScreen().removePreference(hideCat);
         } else {
-            mSweep2Sleep.setChecked(FileUtils.readOneLine(S2S_FILE).equals("1"));
+            int sweep2Sleep = Integer.parseInt(FileUtils.readOneLine(S2S_FILE));
+            mSweep2Sleep.setValue(String.valueOf(sweep2Sleep));
+            mSweep2Sleep.setSummary(mSweep2Sleep.getEntry());
             mSweep2Sleep.setOnPreferenceChangeListener(this);
         }
 
@@ -204,20 +208,24 @@ public class TouchControlSettings extends PreferenceFragment
             mPreferences.edit().putBoolean(PREF_DOUBLETAP2WAKE2, (Boolean) newValue).commit();
             return true;
         } else if (preference == mSweep2Wake) {
-            if (Integer.parseInt(FileUtils.readOneLine(S2W_FILE)) == 0) {
-                new CMDProcessor().su.runWaitFor("busybox echo 1 > " + S2W_FILE);
-            } else {
-                new CMDProcessor().su.runWaitFor("busybox echo 0 > " + S2W_FILE);
+            if (Integer.parseInt(FileUtils.readOneLine(S2W_FILE)) >= 0) {
+                int index = mSweep2Wake.findIndexOfValue((String) newValue);
+                int sweep2Wake = Integer.valueOf((String) newValue);
+                new CMDProcessor().su.runWaitFor(
+                        "busybox echo " + sweep2Wake + " > " + S2W_FILE);
+                mSweep2Wake.setSummary(mSweep2Wake.getEntries()[index]);
             }
-            mPreferences.edit().putBoolean(PREF_SWEEP2WAKE, (Boolean) newValue).commit();
+            mPreferences.edit().putString(PREF_SWEEP2WAKE, (String) newValue).commit();
             return true;
         } else if (preference == mSweep2Sleep) {
-            if (Integer.parseInt(FileUtils.readOneLine(S2S_FILE)) == 0) {
-                new CMDProcessor().su.runWaitFor("busybox echo 1 > " + S2S_FILE);
-            } else {
-                new CMDProcessor().su.runWaitFor("busybox echo 0 > " + S2S_FILE);
+            if (Integer.parseInt(FileUtils.readOneLine(S2S_FILE)) >= 0) {
+                int index = mSweep2Sleep.findIndexOfValue((String) newValue);
+                int sweep2Sleep = Integer.valueOf((String) newValue);
+                new CMDProcessor().su.runWaitFor(
+                        "busybox echo " + sweep2Sleep + " > " + S2S_FILE);
+                mSweep2Sleep.setSummary(mSweep2Sleep.getEntries()[index]);
             }
-            mPreferences.edit().putBoolean(PREF_SWEEP2SLEEP, (Boolean) newValue).commit();
+            mPreferences.edit().putString(PREF_SWEEP2SLEEP, (String) newValue).commit();
             return true;
         } else if (preference == mPowerkeySuspend) {
             if (newValue.toString().equals("true")) {

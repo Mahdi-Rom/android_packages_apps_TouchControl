@@ -28,4 +28,50 @@
         <item>2</item>
     </string-array>
 
+    <!-- Values for the sweep to wake -->
+    <string-array name="sweep2wake_entries">
+        <item>@string/sweep2wake_off</item>
+        <item>@string/sweep2wake_right</item>
+        <item>@string/sweep2wake_left</item>
+        <item>@string/sweep2wake_up</item>
+        <item>@string/sweep2wake_down</item>
+        <item>@string/sweep2wake_right_left</item>
+        <item>@string/sweep2wake_right_up</item>
+        <item>@string/sweep2wake_right_down</item>
+        <item>@string/sweep2wake_left_up</item>
+        <item>@string/sweep2wake_left_down</item>
+        <item>@string/sweep2wake_up_down</item>
+        <item>@string/sweep2wake_all</item>
+    </string-array>
+
+    <string-array name="sweep2wake_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>4</item>
+        <item>8</item>
+        <item>3</item>
+        <item>5</item>
+        <item>9</item>
+        <item>6</item>
+        <item>10</item>
+        <item>12</item>
+        <item>15</item>
+    </string-array>
+
+    <!-- Values for the sweep to sleep -->
+    <string-array name="sweep2sleep_entries">
+        <item>@string/sweep2sleep_off</item>
+        <item>@string/sweep2sleep_right</item>
+        <item>@string/sweep2sleep_left</item>
+        <item>@string/sweep2sleep_right_left</item>
+    </string-array>
+
+    <string-array name="sweep2sleep_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
+
 </resources>

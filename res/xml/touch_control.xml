@@ -33,17 +33,23 @@
         android:summary="@string/doubletap2wake_summary"
         android:persistent="false" />
 
-    <CheckBoxPreference
+    <ListPreference
         android:key="sweep_2_wake"
+        android:persistent="false"
+        android:dialogTitle="@string/sweep2wake_title"
         android:title="@string/sweep2wake_title"
-        android:summary="@string/sweep2wake_summary"
-        android:persistent="false" />
+        android:entries="@array/sweep2wake_entries"
+        android:entryValues="@array/sweep2wake_values"
+        android:defaultValue="0" />
 
-    <CheckBoxPreference
+    <ListPreference
         android:key="sweep_2_sleep"
+        android:persistent="false"
+        android:dialogTitle="@string/sweep2sleep_title"
         android:title="@string/sweep2sleep_title"
-        android:summary="@string/sweep2sleep_summary"
-        android:persistent="false" />
+        android:entries="@array/sweep2sleep_entries"
+        android:entryValues="@array/sweep2sleep_values"
+        android:defaultValue="0" />
 
     <CheckBoxPreference
         android:key="powerkey_suspend"

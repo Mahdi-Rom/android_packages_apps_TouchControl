@@ -86,18 +86,18 @@ public class BootService extends Service implements Constants {
             }
 
             if (new File(S2W_FILE).exists()) {
-                if (preferences.getBoolean(PREF_SWEEP2WAKE, false)) {
-                    sb.append("busybox echo 1 > " + S2W_FILE + ";\n");
-                } else {
-                    sb.append("busybox echo 0 > " + S2W_FILE + ";\n");
+                String sweep2Wake = preferences.getString(PREF_SWEEP2WAKE, null);
+                if (sweep2Wake != null) {
+                   sb.append("busybox echo " + sweep2Wake + " > " + S2W_FILE)
+                   .append(" > ").append(S2W_FILE).append(";\n");
                 }
             }
 
             if (new File(S2S_FILE).exists()) {
-                if (preferences.getBoolean(PREF_SWEEP2SLEEP, false)) {
-                    sb.append("busybox echo 1 > " + S2S_FILE + ";\n");
-                } else {
-                    sb.append("busybox echo 0 > " + S2S_FILE + ";\n");
+                String sweep2Sleep = preferences.getString(PREF_SWEEP2SLEEP, null);
+                if (sweep2Sleep != null) {
+                   sb.append("busybox echo " + sweep2Sleep + " > " + S2S_FILE)
+                   .append(" > ").append(S2S_FILE).append(";\n");
                 }
             }
 

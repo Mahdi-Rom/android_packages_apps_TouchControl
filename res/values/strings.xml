@@ -27,11 +27,25 @@
 
     <!-- Sweep to wake -->
     <string name="sweep2wake_title">Sweep to wake</string>
-    <string name="sweep2wake_summary">Sweep from left to right to wake the screen</string>
+    <string name="sweep2wake_off">Disabled</string>
+    <string name="sweep2wake_right">Right</string>
+    <string name="sweep2wake_left">Left</string>
+    <string name="sweep2wake_up">Up</string>
+    <string name="sweep2wake_down">Down</string>
+    <string name="sweep2wake_right_left">Right and left</string>
+    <string name="sweep2wake_right_up">Right and up</string>
+    <string name="sweep2wake_right_down">Right and down</string>
+    <string name="sweep2wake_left_up">Left and up</string>
+    <string name="sweep2wake_left_down">Left and down</string>
+    <string name="sweep2wake_up_down">Up and down</string>
+    <string name="sweep2wake_all">All directions</string>
 
     <!-- Sweep to sleep -->
     <string name="sweep2sleep_title">Sweep to sleep</string>
-    <string name="sweep2sleep_summary">Sweep from left to right to go to sleep</string>
+    <string name="sweep2sleep_off">Disabled</string>
+    <string name="sweep2sleep_right">Right</string>
+    <string name="sweep2sleep_left">Left</string>
+    <string name="sweep2sleep_right_left">Right and left</string>
 
     <!-- Powerkey suspend -->
     <string name="powerkeysuspend_title">Power key suspend</string>
