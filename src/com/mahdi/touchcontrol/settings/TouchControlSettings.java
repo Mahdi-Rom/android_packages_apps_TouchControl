@@ -111,8 +111,8 @@ public class TouchControlSettings extends PreferenceFragment
         mTouchWakeTimeout = (SeekBarPreference) prefs.findPreference(PREF_TOUCHWAKE_TIMEOUT);
 
         if (!new File(DT2W_FILE).exists()) {
-            ListPreference hideCat = (ListPreference) findPreference(PREF_DOUBLETAP2WAKE);
-            getPreferenceScreen().removePreference(hideCat);
+            Preference hideCat = (ListPreference) findPreference(PREF_DOUBLETAP2WAKE);
+            prefs.removePreference(hideCat);
         } else {
             int doubletap2Wake = Integer.parseInt(FileUtils.readOneLine(DT2W_FILE));
             mDoubletap2Wake.setValue(String.valueOf(doubletap2Wake));
@@ -121,16 +121,16 @@ public class TouchControlSettings extends PreferenceFragment
         }
 
         if (!new File(DT2W2_FILE).exists()) {
-            CheckBoxPreference hideCat = (CheckBoxPreference) findPreference(PREF_DOUBLETAP2WAKE2);
-            getPreferenceScreen().removePreference(hideCat);
+            Preference hideCat = (CheckBoxPreference) findPreference(PREF_DOUBLETAP2WAKE2);
+            prefs.removePreference(hideCat);
         } else {
             mDoubletap2Wake2.setChecked(FileUtils.readOneLine(DT2W2_FILE).equals("1"));
             mDoubletap2Wake2.setOnPreferenceChangeListener(this);
         }
 
         if (!new File(S2W_FILE).exists()) {
-            ListPreference hideCat = (ListPreference) findPreference(PREF_SWEEP2WAKE);
-            getPreferenceScreen().removePreference(hideCat);
+            Preference hideCat = (ListPreference) findPreference(PREF_SWEEP2WAKE);
+            prefs.removePreference(hideCat);
         } else {
             int sweep2Wake = Integer.parseInt(FileUtils.readOneLine(S2W_FILE));
             mSweep2Wake.setValue(String.valueOf(sweep2Wake));
@@ -139,8 +139,8 @@ public class TouchControlSettings extends PreferenceFragment
         }
 
         if (!new File(S2S_FILE).exists()) {
-            ListPreference hideCat = (ListPreference) findPreference(PREF_SWEEP2SLEEP);
-            getPreferenceScreen().removePreference(hideCat);
+            Preference hideCat = (ListPreference) findPreference(PREF_SWEEP2SLEEP);
+            prefs.removePreference(hideCat);
         } else {
             int sweep2Sleep = Integer.parseInt(FileUtils.readOneLine(S2S_FILE));
             mSweep2Sleep.setValue(String.valueOf(sweep2Sleep));
@@ -149,8 +149,8 @@ public class TouchControlSettings extends PreferenceFragment
         }
 
         if (!new File(PWKS_FILE).exists()) {
-            CheckBoxPreference hideCat = (CheckBoxPreference) findPreference(PREF_POWERKEYSUSPEND);
-            getPreferenceScreen().removePreference(hideCat);
+            Preference hideCat = (CheckBoxPreference) findPreference(PREF_POWERKEYSUSPEND);
+            prefs.removePreference(hideCat);
         } else {
             mPowerkeySuspend.setChecked(FileUtils.readOneLine(PWKS_FILE).equals("Y"));
             mPowerkeySuspend.setOnPreferenceChangeListener(this);
@@ -158,21 +158,25 @@ public class TouchControlSettings extends PreferenceFragment
 
         if (!new File(WAKE_TIMEOUT_FILE).exists()) {
             Preference hideCat = (SeekBarPreference) findPreference(PREF_WAKE_TIMEOUT);
-            getPreferenceScreen().removePreference(hideCat);
+            prefs.removePreference(hideCat);
         } else {
+            int wakeTimeout = Integer.parseInt(FileUtils.readOneLine(WAKE_TIMEOUT_FILE));
+            mWakeTimeout.setValue(wakeTimeout);
             mWakeTimeout.setOnPreferenceChangeListener(this);
         }
 
         if (!new File(VIBRATION_STRENGTH_FILE).exists()) {
             Preference hideCat = (SeekBarPreference) findPreference(PREF_VIBRATION_STRENGTH);
-            getPreferenceScreen().removePreference(hideCat);
+            prefs.removePreference(hideCat);
         } else {
+            int vibrationStrength = Integer.parseInt(FileUtils.readOneLine(VIBRATION_STRENGTH_FILE));
+            mVibrationStrength.setValue(vibrationStrength);
             mVibrationStrength.setOnPreferenceChangeListener(this);
         }
 
         if (!new File(T2W_FILE).exists()) {
             Preference hideCat = (Preference) findPreference(PREF_TOUCHWAKE);
-            getPreferenceScreen().removePreference(hideCat);
+            prefs.removePreference(hideCat);
         } else {
             mTouchWake.setChecked(FileUtils.readOneLine(T2W_FILE).equals("1"));
             mTouchWake.setOnPreferenceChangeListener(this);
@@ -180,8 +184,11 @@ public class TouchControlSettings extends PreferenceFragment
 
         if (!new File(T2W_TIMEOUT_FILE).exists()) {
             Preference hideCat = (SeekBarPreference) findPreference(PREF_TOUCHWAKE_TIMEOUT);
-            getPreferenceScreen().removePreference(hideCat);
+            prefs.removePreference(hideCat);
         } else {
+            int i1 = Integer.parseInt(FileUtils.readOneLine(T2W_TIMEOUT_FILE));
+            int i2 = (i1 / 1000);
+            mTouchWakeTimeout.setValue(i2);
             mTouchWakeTimeout.setOnPreferenceChangeListener(this);
         }
     }
@@ -236,15 +243,21 @@ public class TouchControlSettings extends PreferenceFragment
             mPreferences.edit().putBoolean(PREF_POWERKEYSUSPEND, (Boolean) newValue).commit();
             return true;
         } else if (preference == mWakeTimeout) {
-            int value = (Integer) newValue;
+            if (Integer.parseInt(FileUtils.readOneLine(WAKE_TIMEOUT_FILE)) >= 0) {
+                mWakeTimeout.setValue((Integer) newValue);
+                int value = ((Integer) newValue);
                 new CMDProcessor().su.runWaitFor(
-                    "busybox echo " + value + " > " + WAKE_TIMEOUT_FILE);
+                        "busybox echo " + value + " > " + WAKE_TIMEOUT_FILE);
+            }
             mPreferences.edit().putInt(PREF_WAKE_TIMEOUT, (Integer) newValue).commit();
             return true;
         } else if (preference == mVibrationStrength) {
-            int value = (Integer) newValue;
+            if (Integer.parseInt(FileUtils.readOneLine(VIBRATION_STRENGTH_FILE)) >= 0) {
+                mVibrationStrength.setValue((Integer) newValue);
+                int value = ((Integer) newValue);
                 new CMDProcessor().su.runWaitFor(
-                    "busybox echo " + value + " > " + VIBRATION_STRENGTH_FILE);
+                        "busybox echo " + value + " > " + VIBRATION_STRENGTH_FILE);
+            }
             mPreferences.edit().putInt(PREF_VIBRATION_STRENGTH, (Integer) newValue).commit();
             return true;
         } else if (preference == mTouchWake) {
@@ -256,9 +269,12 @@ public class TouchControlSettings extends PreferenceFragment
             mPreferences.edit().putBoolean(PREF_TOUCHWAKE, (Boolean) newValue).commit();
             return true;
         } else if (preference == mTouchWakeTimeout) {
-            int value = (Integer) newValue;
+            if (Integer.parseInt(FileUtils.readOneLine(T2W_TIMEOUT_FILE)) >= 0) {
+                mTouchWakeTimeout.setValue((Integer) newValue);
+                int value = ((Integer) newValue) * 1000;
                 new CMDProcessor().su.runWaitFor(
-                    "busybox echo " + value + " > " + T2W_TIMEOUT_FILE);
+                        "busybox echo " + value + " > " + T2W_TIMEOUT_FILE);
+            }
             mPreferences.edit().putInt(PREF_TOUCHWAKE_TIMEOUT, (Integer) newValue).commit();
             return true;
         }

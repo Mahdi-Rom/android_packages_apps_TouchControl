@@ -75,7 +75,7 @@
         settings:min="0"
         settings:unitsLeft=""
         settings:unitsRight=""
-        android:persistent="true" />
+        android:persistent="false" />
 
     <CheckBoxPreference
         android:key="touch_wake"
@@ -87,10 +87,10 @@
         android:key="touch_wake_timeout"
         android:title="@string/touchwake_timeout_title"
         android:summary="@string/touchwake_timeout_summary"
-        android:max="300000"
+        android:max="300"
         settings:min="0"
         settings:unitsLeft=""
         settings:unitsRight="sec"
-        android:persistent="true" />
+        android:persistent="false" />
 
 </PreferenceScreen>
