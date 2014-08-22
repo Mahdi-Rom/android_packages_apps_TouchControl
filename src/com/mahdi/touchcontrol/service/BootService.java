@@ -70,10 +70,10 @@ public class BootService extends Service implements Constants {
             final StringBuilder sb = new StringBuilder();
 
             if (new File(DT2W_FILE).exists()) {
-                if (preferences.getBoolean(PREF_DOUBLETAP2WAKE, false)) {
-                    sb.append("busybox echo 1 > " + DT2W_FILE + ";\n");
-                } else {
-                    sb.append("busybox echo 0 > " + DT2W_FILE + ";\n");
+                String doubletap2Wake = preferences.getString(PREF_DOUBLETAP2WAKE, null);
+                if (doubletap2Wake != null) {
+                   sb.append("busybox echo " + doubletap2Wake + " > " + DT2W_FILE)
+                   .append(" > ").append(DT2W_FILE).append(";\n");
                 }
             }
 

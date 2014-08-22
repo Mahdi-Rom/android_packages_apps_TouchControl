@@ -18,11 +18,14 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:settings="com.mahdi.touchcontrol">
 
-    <CheckBoxPreference
+    <ListPreference
         android:key="doubletap_2_wake"
+        android:persistent="false"
+        android:dialogTitle="@string/doubletap2wake_title"
         android:title="@string/doubletap2wake_title"
-        android:summary="@string/doubletap2wake_summary"
-        android:persistent="false" />
+        android:entries="@array/doubletap2wake_entries"
+        android:entryValues="@array/doubletap2wake_values"
+        android:defaultValue="0" />
 
     <CheckBoxPreference
         android:key="doubletap_2_wake2"

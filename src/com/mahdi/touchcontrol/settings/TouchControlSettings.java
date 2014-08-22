@@ -24,6 +24,7 @@ import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.CheckBoxPreference;
+import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.PreferenceFragment;
@@ -54,7 +55,7 @@ public class TouchControlSettings extends PreferenceFragment
     public static final String PREF_TOUCHWAKE = "touch_wake";
     public static final String PREF_TOUCHWAKE_TIMEOUT = "touch_wake_timeout";
 
-    private CheckBoxPreference mDoubletap2Wake;
+    private ListPreference mDoubletap2Wake;
     private CheckBoxPreference mDoubletap2Wake2;
     private CheckBoxPreference mSweep2Wake;
     private CheckBoxPreference mSweep2Sleep;
@@ -99,7 +100,7 @@ public class TouchControlSettings extends PreferenceFragment
             alertDialog.show();
         }
 
-        mDoubletap2Wake = (CheckBoxPreference) prefs.findPreference(PREF_DOUBLETAP2WAKE);
+        mDoubletap2Wake = (ListPreference) prefs.findPreference(PREF_DOUBLETAP2WAKE);
         mDoubletap2Wake2 = (CheckBoxPreference) prefs.findPreference(PREF_DOUBLETAP2WAKE2);
         mSweep2Wake = (CheckBoxPreference) prefs.findPreference(PREF_SWEEP2WAKE);
         mSweep2Sleep = (CheckBoxPreference) prefs.findPreference(PREF_SWEEP2SLEEP);
@@ -110,10 +111,12 @@ public class TouchControlSettings extends PreferenceFragment
         mTouchWakeTimeout = (SeekBarPreference) prefs.findPreference(PREF_TOUCHWAKE_TIMEOUT);
 
         if (!new File(DT2W_FILE).exists()) {
-            CheckBoxPreference hideCat = (CheckBoxPreference) findPreference(PREF_DOUBLETAP2WAKE);
+            ListPreference hideCat = (ListPreference) findPreference(PREF_DOUBLETAP2WAKE);
             getPreferenceScreen().removePreference(hideCat);
         } else {
-            mDoubletap2Wake.setChecked(FileUtils.readOneLine(DT2W_FILE).equals("1"));
+            int doubletap2Wake = Integer.parseInt(FileUtils.readOneLine(DT2W_FILE));
+            mDoubletap2Wake.setValue(String.valueOf(doubletap2Wake));
+            mDoubletap2Wake.setSummary(mDoubletap2Wake.getEntry());
             mDoubletap2Wake.setOnPreferenceChangeListener(this);
         }
 
@@ -183,12 +186,14 @@ public class TouchControlSettings extends PreferenceFragment
     public boolean onPreferenceChange(Preference preference, Object newValue) {
 
         if (preference == mDoubletap2Wake) {
-            if (Integer.parseInt(FileUtils.readOneLine(DT2W_FILE)) == 0) {
-                new CMDProcessor().su.runWaitFor("busybox echo 1 > " + DT2W_FILE);
-            } else {
-                new CMDProcessor().su.runWaitFor("busybox echo 0 > " + DT2W_FILE);
+            if (Integer.parseInt(FileUtils.readOneLine(DT2W_FILE)) >= 0) {
+                int index = mDoubletap2Wake.findIndexOfValue((String) newValue);
+                int doubletap2Wake = Integer.valueOf((String) newValue);
+                new CMDProcessor().su.runWaitFor(
+                        "busybox echo " + doubletap2Wake + " > " + DT2W_FILE);
+                mDoubletap2Wake.setSummary(mDoubletap2Wake.getEntries()[index]);
             }
-            mPreferences.edit().putBoolean(PREF_DOUBLETAP2WAKE, (Boolean) newValue).commit();
+            mPreferences.edit().putString(PREF_DOUBLETAP2WAKE, (String) newValue).commit();
             return true;
         } else if (preference == mDoubletap2Wake2) {
             if (Integer.parseInt(FileUtils.readOneLine(DT2W2_FILE)) == 0) {

@@ -21,6 +21,9 @@
     <!-- Double tap to wake -->
     <string name="doubletap2wake_title">Double tap to wake</string>
     <string name="doubletap2wake_summary">Double tap anywhere to wake the screen</string>
+    <string name="doubletap2wake_off">Disabled</string>
+    <string name="doubletap2wake_bottom">Bottom half of the screen</string>
+    <string name="doubletap2wake_full">Full screen</string>
 
     <!-- Sweep to wake -->
     <string name="sweep2wake_title">Sweep to wake</string>
