@@ -101,6 +101,14 @@ public class BootService extends Service implements Constants {
                 }
             }
 
+            if (new File(GESTURES_FILE).exists()) {
+                if (preferences.getBoolean(PREF_ENABLE_GESTURES, false)) {
+                    sb.append("busybox echo 1 > " + GESTURES_FILE + ";\n");
+                } else {
+                    sb.append("busybox echo 0 > " + GESTURES_FILE + ";\n");
+                }
+            }
+
             if (new File(PWKS_FILE).exists()) {
                 if (preferences.getBoolean(PREF_POWERKEYSUSPEND, false)) {
                     sb.append("busybox echo Y > " + PWKS_FILE + ";\n");

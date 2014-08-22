@@ -22,6 +22,7 @@ public interface Constants {
     public static final String DT2W2_FILE = "/sys/devices/virtual/input/lge_touch/dt_wake_enabled";
     public static final String S2W_FILE = "/sys/android_touch/sweep2wake";
     public static final String S2S_FILE = "/sys/android_touch/sweep2sleep";
+    public static final String GESTURES_FILE = "/sys/android_touch/wake_gestures";
     public static final String PWKS_FILE = "/sys/module/qpnp_power_on/parameters/pwrkey_suspend";
     public static final String WAKE_TIMEOUT_FILE = "/sys/android_touch/wake_timeout";
     public static final String VIBRATION_STRENGTH_FILE = "/sys/android_touch/vib_strength";
@@ -32,6 +33,7 @@ public interface Constants {
     public static final String PREF_DOUBLETAP2WAKE2 = "doubletap_2_wake2";
     public static final String PREF_SWEEP2WAKE = "sweep_2_wake";
     public static final String PREF_SWEEP2SLEEP = "sweep_2_sleep";
+    public static final String PREF_ENABLE_GESTURES = "enable gestures";
     public static final String PREF_POWERKEYSUSPEND = "powerkey_suspend";
     public static final String PREF_WAKE_TIMEOUT = "wake_timeout";
     public static final String PREF_VIBRATION_STRENGTH = "vibration_strength";

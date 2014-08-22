@@ -47,6 +47,10 @@
     <string name="sweep2sleep_left">Left</string>
     <string name="sweep2sleep_right_left">Right and left</string>
 
+    <!-- Gestures -->
+    <string name="gestures_title">Wake gestures</string>
+    <string name="gestures_summary">This option only enables the wake gesture funtion, you will need to install Wake Gesture Xposed module to add gesture actions</string>
+
     <!-- Powerkey suspend -->
     <string name="powerkeysuspend_title">Power key suspend</string>
     <string name="powerkeysuspend_summary">Using the power key to turn your screen off will temporarily disable all options</string>

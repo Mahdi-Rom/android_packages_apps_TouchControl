@@ -52,6 +52,12 @@
         android:defaultValue="0" />
 
     <CheckBoxPreference
+        android:key="enable gestures"
+        android:title="@string/gestures_title"
+        android:summary="@string/gestures_summary"
+        android:persistent="false" />
+
+    <CheckBoxPreference
         android:key="powerkey_suspend"
         android:title="@string/powerkeysuspend_title"
         android:summary="@string/powerkeysuspend_summary"

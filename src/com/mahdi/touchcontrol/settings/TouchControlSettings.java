@@ -49,6 +49,7 @@ public class TouchControlSettings extends PreferenceFragment
     public static final String PREF_DOUBLETAP2WAKE2 = "doubletap_2_wake2";
     public static final String PREF_SWEEP2WAKE = "sweep_2_wake";
     public static final String PREF_SWEEP2SLEEP = "sweep_2_sleep";
+    public static final String PREF_ENABLE_GESTURES = "enable gestures";
     public static final String PREF_POWERKEYSUSPEND = "powerkey_suspend";
     public static final String PREF_WAKE_TIMEOUT = "wake_timeout";
     public static final String PREF_VIBRATION_STRENGTH = "vibration_strength";
@@ -59,6 +60,7 @@ public class TouchControlSettings extends PreferenceFragment
     private CheckBoxPreference mDoubletap2Wake2;
     private ListPreference mSweep2Wake;
     private ListPreference mSweep2Sleep;
+    private CheckBoxPreference mEnableGestures;
     private CheckBoxPreference mPowerkeySuspend;
     private SeekBarPreference mWakeTimeout;
     private SeekBarPreference mVibrationStrength;
@@ -104,6 +106,7 @@ public class TouchControlSettings extends PreferenceFragment
         mDoubletap2Wake2 = (CheckBoxPreference) prefs.findPreference(PREF_DOUBLETAP2WAKE2);
         mSweep2Wake = (ListPreference) prefs.findPreference(PREF_SWEEP2WAKE);
         mSweep2Sleep = (ListPreference) prefs.findPreference(PREF_SWEEP2SLEEP);
+        mEnableGestures = (CheckBoxPreference) prefs.findPreference(PREF_ENABLE_GESTURES);
         mPowerkeySuspend = (CheckBoxPreference) prefs.findPreference(PREF_POWERKEYSUSPEND);
         mWakeTimeout = (SeekBarPreference) prefs.findPreference(PREF_WAKE_TIMEOUT);
         mVibrationStrength = (SeekBarPreference) prefs.findPreference(PREF_VIBRATION_STRENGTH);
@@ -146,6 +149,14 @@ public class TouchControlSettings extends PreferenceFragment
             mSweep2Sleep.setValue(String.valueOf(sweep2Sleep));
             mSweep2Sleep.setSummary(mSweep2Sleep.getEntry());
             mSweep2Sleep.setOnPreferenceChangeListener(this);
+        }
+
+        if (!new File(GESTURES_FILE).exists()) {
+            Preference hideCat = (CheckBoxPreference) findPreference(PREF_ENABLE_GESTURES);
+            prefs.removePreference(hideCat);
+        } else {
+            mEnableGestures.setChecked(FileUtils.readOneLine(GESTURES_FILE).equals("1"));
+            mEnableGestures.setOnPreferenceChangeListener(this);
         }
 
         if (!new File(PWKS_FILE).exists()) {
@@ -233,6 +244,14 @@ public class TouchControlSettings extends PreferenceFragment
                 mSweep2Sleep.setSummary(mSweep2Sleep.getEntries()[index]);
             }
             mPreferences.edit().putString(PREF_SWEEP2SLEEP, (String) newValue).commit();
+            return true;
+        } else if (preference == mEnableGestures) {
+            if (Integer.parseInt(FileUtils.readOneLine(GESTURES_FILE)) == 0) {
+                new CMDProcessor().su.runWaitFor("busybox echo 1 > " + GESTURES_FILE);
+            } else {
+                new CMDProcessor().su.runWaitFor("busybox echo 0 > " + GESTURES_FILE);
+            }
+            mPreferences.edit().putBoolean(PREF_ENABLE_GESTURES, (Boolean) newValue).commit();
             return true;
         } else if (preference == mPowerkeySuspend) {
             if (newValue.toString().equals("true")) {
