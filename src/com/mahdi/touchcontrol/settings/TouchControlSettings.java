@@ -299,4 +299,9 @@ public class TouchControlSettings extends PreferenceFragment
         }
         return false;
     }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+    }
 }

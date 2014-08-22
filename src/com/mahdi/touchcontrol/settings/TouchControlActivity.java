@@ -17,7 +17,9 @@
 package com.mahdi.touchcontrol.settings;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 
 public class TouchControlActivity extends Activity {
 
@@ -30,4 +32,16 @@ public class TouchControlActivity extends Activity {
         getActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int resId = item.getItemId();
+        if (resId == android.R.id.home) {
+            // app icon in action bar clicked; go home
+            Intent i = new Intent();
+            i.setClassName("com.android.settings", "com.android.settings.DisplaySettings");
+            startActivity(i);
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
 }
