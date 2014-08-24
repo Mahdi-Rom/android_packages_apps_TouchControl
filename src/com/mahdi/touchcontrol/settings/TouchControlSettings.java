@@ -45,6 +45,7 @@ public class TouchControlSettings extends PreferenceFragment
 
     public static final String TOUCH_CONTROL_SETTINGS = "touch_control_settings";
 
+    public static final String PREF_SOB = "set_on_boot";
     public static final String PREF_DOUBLETAP2WAKE = "doubletap_2_wake";
     public static final String PREF_DOUBLETAP2WAKE2 = "doubletap_2_wake2";
     public static final String PREF_SWEEP2WAKE = "sweep_2_wake";
@@ -56,6 +57,7 @@ public class TouchControlSettings extends PreferenceFragment
     public static final String PREF_TOUCHWAKE = "touch_wake";
     public static final String PREF_TOUCHWAKE_TIMEOUT = "touch_wake_timeout";
 
+    private CheckBoxPreference mSetOnBoot;
     private ListPreference mDoubletap2Wake;
     private CheckBoxPreference mDoubletap2Wake2;
     private ListPreference mSweep2Wake;
@@ -102,6 +104,7 @@ public class TouchControlSettings extends PreferenceFragment
             alertDialog.show();
         }
 
+        mSetOnBoot = (CheckBoxPreference) prefs.findPreference(PREF_SOB);
         mDoubletap2Wake = (ListPreference) prefs.findPreference(PREF_DOUBLETAP2WAKE);
         mDoubletap2Wake2 = (CheckBoxPreference) prefs.findPreference(PREF_DOUBLETAP2WAKE2);
         mSweep2Wake = (ListPreference) prefs.findPreference(PREF_SWEEP2WAKE);

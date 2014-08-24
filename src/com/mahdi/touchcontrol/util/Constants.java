@@ -42,6 +42,8 @@ public interface Constants {
 
     public static final String PREF_SH = "pref_sh";
     public static final String NOT_FOUND = "not found";
+
+    public static final String PREF_SOB = "set_on_boot";
 }
 
 

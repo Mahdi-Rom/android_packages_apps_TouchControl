@@ -19,15 +19,31 @@
 package com.mahdi.touchcontrol.service;
 
 import android.content.BroadcastReceiver;
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
+
+import com.mahdi.touchcontrol.R;
+
+import java.io.File;
+import java.util.List;
 
 
 public class BootReceiver extends BroadcastReceiver {
 
+    public static final String TOUCHCONTROL_PREFERENCES = "com.mahdi.touchcontrol_preferences";
+
     @Override
     public void onReceive(Context context, Intent intent) {
+
+        SharedPreferences preferences = context.getSharedPreferences(
+                    TOUCHCONTROL_PREFERENCES, Activity.MODE_PRIVATE);
+
+        boolean setOnBoot = preferences.getBoolean("set_on_boot", false);
         Intent service = new Intent(context, BootService.class);
-        context.startService(service);
+        if (setOnBoot == true) {
+            context.startService(service);
+        }
     }
 }

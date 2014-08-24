@@ -18,6 +18,10 @@
     <!-- Title -->
     <string name="touch_control_title">Advanced</string>
 
+    <!-- Set on boot -->
+    <string name="set_on_boot_title">Set on boot</string>
+    <string name="set_on_boot_summary">Restore the settings on boot</string>
+
     <!-- Double tap to wake -->
     <string name="doubletap2wake_title">Double tap to wake</string>
     <string name="doubletap2wake_summary">Double tap anywhere to wake the screen</string>
