@@ -16,71 +16,71 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
     <!-- Title -->
-    <string name="touch_control_title">Advanced</string>
+    <string name="touch_control_title">Расширенные</string>
 
     <!-- Set on boot -->
-    <string name="set_on_boot_title">Set on boot</string>
-    <string name="set_on_boot_summary">Restore the settings on boot</string>
+    <string name="set_on_boot_title">Установить при загрузке</string>
+    <string name="set_on_boot_summary">Сохранять настройки при загрузке</string>
 
     <!-- Double tap to wake -->
-    <string name="doubletap2wake_title">Double tap to wake</string>
-    <string name="doubletap2wake_summary">Double tap anywhere to wake the screen</string>
-    <string name="doubletap2wake_off">Disabled</string>
-    <string name="doubletap2wake_bottom">Bottom half of the screen</string>
-    <string name="doubletap2wake_full">Full screen</string>
+    <string name="doubletap2wake_title">Двойное касание для пробуждения</string>
+    <string name="doubletap2wake_summary">Коснитесь экрана два раза в любом месте для пробуждения</string>
+    <string name="doubletap2wake_off">Отключено</string>
+    <string name="doubletap2wake_bottom">Нижняя половина экрана</string>
+    <string name="doubletap2wake_full">Весь экран</string>
 
     <!-- Sweep to wake -->
-    <string name="sweep2wake_title">Sweep to wake</string>
-    <string name="sweep2wake_off">Disabled</string>
-    <string name="sweep2wake_right">Right</string>
-    <string name="sweep2wake_left">Left</string>
-    <string name="sweep2wake_up">Up</string>
-    <string name="sweep2wake_down">Down</string>
-    <string name="sweep2wake_right_left">Right and left</string>
-    <string name="sweep2wake_right_up">Right and up</string>
-    <string name="sweep2wake_right_down">Right and down</string>
-    <string name="sweep2wake_left_up">Left and up</string>
-    <string name="sweep2wake_left_down">Left and down</string>
-    <string name="sweep2wake_up_down">Up and down</string>
-    <string name="sweep2wake_all">All directions</string>
+    <string name="sweep2wake_title">Провести для пробуждения</string>
+    <string name="sweep2wake_off">Отключено</string>
+    <string name="sweep2wake_right">Справа</string>
+    <string name="sweep2wake_left">Слева</string>
+    <string name="sweep2wake_up">Сверху</string>
+    <string name="sweep2wake_down">Снизу</string>
+    <string name="sweep2wake_right_left">Справа и слева</string>
+    <string name="sweep2wake_right_up">Справа и сверху</string>
+    <string name="sweep2wake_right_down">Справа и снизу</string>
+    <string name="sweep2wake_left_up">Слева и сверху</string>
+    <string name="sweep2wake_left_down">Слева и снизу</string>
+    <string name="sweep2wake_up_down">Сверху и снизу</string>
+    <string name="sweep2wake_all">Во всех направлениях</string>
 
     <!-- Sweep to sleep -->
-    <string name="sweep2sleep_title">Sweep to sleep</string>
-    <string name="sweep2sleep_off">Disabled</string>
-    <string name="sweep2sleep_right">Right</string>
-    <string name="sweep2sleep_left">Left</string>
-    <string name="sweep2sleep_right_left">Right and left</string>
+    <string name="sweep2sleep_title">Провести для выключения экрана</string>
+    <string name="sweep2sleep_off">Отключено</string>
+    <string name="sweep2sleep_right">Справа</string>
+    <string name="sweep2sleep_left">Слева</string>
+    <string name="sweep2sleep_right_left">Справа и слева</string>
 
     <!-- Gestures -->
-    <string name="gestures_title">Wake gestures</string>
-    <string name="gestures_summary">This option only enables the wake gesture funtion, you will need to install Wake Gesture Xposed module to add gesture actions</string>
+    <string name="gestures_title">Жесты пробуждения</string>
+    <string name="gestures_summary">Эта настройка включает \"Жесты пробуждения\", однако вам нужно ещё установить Wake Gesture Xposed module, чтобы добавить действия для жестов</string>
 
     <!-- Powerkey suspend -->
-    <string name="powerkeysuspend_title">Power key suspend</string>
-    <string name="powerkeysuspend_summary">Using the power key to turn your screen off will temporarily disable all options</string>
+    <string name="powerkeysuspend_title">Приостанавливать кнопкой питания</string>
+    <string name="powerkeysuspend_summary">При использовании кнопки питания для выключения экрана остальные функции будут временно отключены</string>
 
     <!-- Wake timeout -->
-    <string name="wake_timeout_title">Wake timeout</string>
-    <string name="wake_timeout_summary">After this timeout options will be temporarily disabled</string>
+    <string name="wake_timeout_title">Тайм-аут пробуждения</string>
+    <string name="wake_timeout_summary">После этого времени эти настройки будут временно отключены</string>
 
     <!-- Vibration strength -->
-    <string name="vibration_strength_title">Vibration strength</string>
-    <string name="vibration_strength_summary">Adjust the haptic feedback strength</string>
+    <string name="vibration_strength_title">Сила вибрации</string>
+    <string name="vibration_strength_summary">Настроить силу тактильной обратной связи</string>
 
     <!-- Touch wake -->
-    <string name="touchwake_title">Touch wake</string>
-    <string name="touchwake_summary">If enabled, you will be able to turn the screen on if it times out</string>
+    <string name="touchwake_title">Пробуждение касанием</string>
+    <string name="touchwake_summary">Если включено, вы сможете быстро включить экран, когда он погас и отключился</string>
 
     <!-- Touch wake timeout -->
-    <string name="touchwake_timeout_title">Touch wake timeout</string>
-    <string name="touchwake_timeout_summary">After this timeout options will be temporarily disabled</string>
+    <string name="touchwake_timeout_title">Тайм-аут пробуждения касанием</string>
+    <string name="touchwake_timeout_summary">После этого времени эти настройки будут временно отключены</string>
 
     <!-- Warning dialog -->
-    <string name="touch_control_warning_title">Proceed with Caution</string>
-    <string name="touch_control_warning">These settings have the potential to cause higher than normal idle battery drain.\n\nWe request you do not complain about battery life if any of these settings have been enabled.</string>
+    <string name="touch_control_warning_title">Действуйте с осторожностью</string>
+    <string name="touch_control_warning">Эти настройки могут вызвать повышенное энергопотребление в режиме ожидания.\n\nМы просим вас не жаловаться на энергопотребление, если у вас включена хотя бы одна из этих настроек.</string>
 
     <!-- General strings -->
-    <string name="ok">OK</string>
-    <string name="cancel">Cancel</string>
+    <string name="ok">ОК</string>
+    <string name="cancel">Отмена</string>
 
 </resources>
