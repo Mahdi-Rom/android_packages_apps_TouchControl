@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2014 Mahdi-Rom
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <!-- Title -->
+    <string name="touch_control_title">Расширенные</string>
+
+    <!-- Set on boot -->
+    <string name="set_on_boot_title">Установить при загрузке</string>
+    <string name="set_on_boot_summary">Сохранять настройки при загрузке</string>
+
+    <!-- Double tap to wake -->
+    <string name="doubletap2wake_title">Двойное касание для пробуждения</string>
+    <string name="doubletap2wake_summary">Коснитесь экрана два раза в любом месте для пробуждения</string>
+    <string name="doubletap2wake_off">Отключено</string>
+    <string name="doubletap2wake_bottom">Нижняя половина экрана</string>
+    <string name="doubletap2wake_full">Весь экран</string>
+
+    <!-- Sweep to wake -->
+    <string name="sweep2wake_title">Провести для пробуждения</string>
+    <string name="sweep2wake_off">Отключено</string>
+    <string name="sweep2wake_right">Справа</string>
+    <string name="sweep2wake_left">Слева</string>
+    <string name="sweep2wake_up">Сверху</string>
+    <string name="sweep2wake_down">Снизу</string>
+    <string name="sweep2wake_right_left">Справа и слева</string>
+    <string name="sweep2wake_right_up">Справа и сверху</string>
+    <string name="sweep2wake_right_down">Справа и снизу</string>
+    <string name="sweep2wake_left_up">Слева и сверху</string>
+    <string name="sweep2wake_left_down">Слева и снизу</string>
+    <string name="sweep2wake_up_down">Сверху и снизу</string>
+    <string name="sweep2wake_all">Во всех направлениях</string>
+
+    <!-- Sweep to sleep -->
+    <string name="sweep2sleep_title">Провести для выключения экрана</string>
+    <string name="sweep2sleep_off">Отключено</string>
+    <string name="sweep2sleep_right">Справа</string>
+    <string name="sweep2sleep_left">Слева</string>
+    <string name="sweep2sleep_right_left">Справа и слева</string>
+
+    <!-- Gestures -->
+    <string name="gestures_title">Жесты пробуждения</string>
+    <string name="gestures_summary">Эта настройка включает \"Жесты пробуждения\", однако вам нужно ещё установить Wake Gesture Xposed module, чтобы добавить действия для жестов</string>
+
+    <!-- Powerkey suspend -->
+    <string name="powerkeysuspend_title">Приостанавливать кнопкой питания</string>
+    <string name="powerkeysuspend_summary">При использовании кнопки питания для выключения экрана остальные функции будут временно отключены</string>
+
+    <!-- Wake timeout -->
+    <string name="wake_timeout_title">Тайм-аут пробуждения</string>
+    <string name="wake_timeout_summary">После этого времени эти настройки будут временно отключены</string>
+
+    <!-- Vibration strength -->
+    <string name="vibration_strength_title">Сила вибрации</string>
+    <string name="vibration_strength_summary">Настроить силу тактильной обратной связи</string>
+
+    <!-- Touch wake -->
+    <string name="touchwake_title">Пробуждение касанием</string>
+    <string name="touchwake_summary">Если включено, вы сможете быстро включить экран, когда он погас и отключился</string>
+
+    <!-- Touch wake timeout -->
+    <string name="touchwake_timeout_title">Тайм-аут пробуждения касанием</string>
+    <string name="touchwake_timeout_summary">После этого времени эти настройки будут временно отключены</string>
+
+    <!-- Warning dialog -->
+    <string name="touch_control_warning_title">Действуйте с осторожностью</string>
+    <string name="touch_control_warning">Эти настройки могут вызвать повышенное энергопотребление в режиме ожидания.\n\nМы просим вас не жаловаться на энергопотребление, если у вас включена хотя бы одна из этих настроек.</string>
+
+    <!-- General strings -->
+    <string name="ok">ОК</string>
+    <string name="cancel">Отмена</string>
+
+</resources>
