@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2014 Mahdi-Rom
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <!-- Title -->
+    <string name="touch_control_title">Avanzate</string>
+
+    <!-- Set on boot -->
+    <string name="set_on_boot_title">Applica all\'avvio</string>
+    <string name="set_on_boot_summary">Ripristina le impostazioni all\'avvio</string>
+
+    <!-- Double tap to wake -->
+    <string name="doubletap2wake_title">Double tap to wake</string>
+    <string name="doubletap2wake_summary">Tocca due volte, ovunque, per accendere lo schermo</string>
+    <string name="doubletap2wake_off">Disabilitato</string>
+    <string name="doubletap2wake_bottom">Metà inferiore dello schermo</string>
+    <string name="doubletap2wake_full">Dappertutto</string>
+
+    <!-- Sweep to wake -->
+    <string name="sweep2wake_title">Sweep to wake</string>
+    <string name="sweep2wake_off">Disabilitato</string>
+    <string name="sweep2wake_right">Verso Destra</string>
+    <string name="sweep2wake_left">Verso Sinistra</string>
+    <string name="sweep2wake_up">Verso l\'Alto</string>
+    <string name="sweep2wake_down">Verso il Basso</string>
+    <string name="sweep2wake_right_left">Verso Destra e Sinistra</string>
+    <string name="sweep2wake_right_up">Verso Destra e in Alto</string>
+    <string name="sweep2wake_right_down">Verso Destra e in Basso</string>
+    <string name="sweep2wake_left_up">Verso Sinistra e in Alto</string>
+    <string name="sweep2wake_left_down">Verso Sinistra e in Basso</string>
+    <string name="sweep2wake_up_down">Verso l\'Alto e il Basso</string>
+    <string name="sweep2wake_all">In tutte le direzioni</string>
+
+    <!-- Sweep to sleep -->
+    <string name="sweep2sleep_title">Sweep to sleep</string>
+    <string name="sweep2sleep_off">Disabilitato</string>
+    <string name="sweep2sleep_right">Verso Destra</string>
+    <string name="sweep2sleep_left">Verso Sinistra</string>
+    <string name="sweep2sleep_right_left">Verso Destra e Sinistra</string>
+
+    <!-- Gestures -->
+    <string name="gestures_title">Wake gesture</string>
+    <string name="gestures_summary">Questa opzione abilita solo l\'accensione con le gesture, avrai bisogno del modulo Xposed "Wake Gesture" per aggiungere le gesture</string>
+
+    <!-- Powerkey suspend -->
+    <string name="powerkeysuspend_title">Power key suspend</string>
+    <string name="powerkeysuspend_summary">Usando il tasto di accensione per spegnere lo schermo disabiliterà tutte le altre opzioni</string>
+
+    <!-- Wake timeout -->
+    <string name="wake_timeout_title">Timeout Risveglio</string>
+    <string name="wake_timeout_summary">Dopo questo timeout, le opzioni verranno temporaneamente disabilitate</string>
+
+    <!-- Vibration strength -->
+    <string name="vibration_strength_title">Intensità Vibrazione</string>
+    <string name="vibration_strength_summary">Imposta l\'intensità del feedback aptico</string>
+
+    <!-- Touch wake -->
+    <string name="touchwake_title">Touch wake</string>
+    <string name="touchwake_summary">Se abilitato, sarai in grado di accendere lo schermo dopo il timeout</string>
+
+    <!-- Touch wake timeout -->
+    <string name="touchwake_timeout_title">Touch wake timeout</string>
+    <string name="touchwake_timeout_summary">Dopo questo timeout le opzioni saranno temporaneamente disabilitate</string>
+
+    <!-- Warning dialog -->
+    <string name="touch_control_warning_title">Procedere con Attenzione</string>
+    <string name="touch_control_warning">Queste impostazioni possono causare un maggior battery drain rispetto al normale.\n\nChiediamo di non lamentarsi della durata della batteria se almeno una di queste impostazioni è stata abilitata.</string>
+
+    <!-- General strings -->
+    <string name="ok">OK</string>
+    <string name="cancel">Annulla</string>
+
+</resources>
