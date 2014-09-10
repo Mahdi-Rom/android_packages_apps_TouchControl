@@ -34,12 +34,10 @@ public class TouchControlActivity extends Activity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        int resId = item.getItemId();
-        if (resId == android.R.id.home) {
-            // app icon in action bar clicked; go home
-            Intent i = new Intent();
-            i.setClassName("com.android.settings", "com.android.settings.DisplaySettings");
-            startActivity(i);
+        switch (item.getItemId()) {
+        // Respond to the action bar's Up/Home button
+        case android.R.id.home:
+            finish();
             return true;
         }
         return super.onOptionsItemSelected(item);

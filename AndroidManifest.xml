@@ -21,7 +21,7 @@
         <activity android:name=".settings.TouchControlActivity"
             android:icon="@drawable/app_icon"
             android:label="@string/touch_control_title"
-            android:theme="@style/Theme.Settings"
+            android:theme="@style/Theme.Main"
             android:configChanges="orientation|screenSize">
           <intent-filter>
                 <action android:name="com.mahdi.action.LAUNCH_TOUCH_CONTROL_SETTINGS" />
