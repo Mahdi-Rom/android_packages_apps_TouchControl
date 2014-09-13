@@ -85,7 +85,22 @@ public class TouchControlSettings extends PreferenceFragment
                 TOUCH_CONTROL_SETTINGS, Activity.MODE_PRIVATE);
 
         boolean firstrun = mPreferences.getBoolean("firstrun", true);
-        if (firstrun) {
+
+        if (!FileUtils.hasTouchscreenGestures()) {
+            /* Display the warning dialog */
+            alertDialog = new AlertDialog.Builder(getActivity()).create();
+            alertDialog.setTitle(R.string.no_support_title);
+            alertDialog.setMessage(getResources().getString(R.string.no_support_warning));
+            alertDialog.setCancelable(false);
+            alertDialog.setButton(DialogInterface.BUTTON_POSITIVE,
+                getResources().getString(R.string.ok),
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        System.exit(0);
+                }
+            });
+            alertDialog.show();
+        } else if (firstrun) {
             SharedPreferences.Editor e = mPreferences.edit();
             e.putBoolean("firstrun", false);
             e.commit();
@@ -115,6 +130,11 @@ public class TouchControlSettings extends PreferenceFragment
         mVibrationStrength = (SeekBarPreference) prefs.findPreference(PREF_VIBRATION_STRENGTH);
         mTouchWake = (CheckBoxPreference) prefs.findPreference(PREF_TOUCHWAKE);
         mTouchWakeTimeout = (SeekBarPreference) prefs.findPreference(PREF_TOUCHWAKE_TIMEOUT);
+
+        if (!FileUtils.hasTouchscreenGestures()) {
+            Preference hideCat = (CheckBoxPreference) findPreference(PREF_SOB);
+            prefs.removePreference(hideCat);
+        }
 
         if (!new File(DT2W_FILE).exists()) {
             Preference hideCat = (ListPreference) findPreference(PREF_DOUBLETAP2WAKE);
@@ -205,6 +225,11 @@ public class TouchControlSettings extends PreferenceFragment
             mTouchWakeTimeout.setValue(i2);
             mTouchWakeTimeout.setOnPreferenceChangeListener(this);
         }
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
     }
 
     @Override
@@ -301,10 +326,5 @@ public class TouchControlSettings extends PreferenceFragment
             return true;
         }
         return false;
-    }
-
-    @Override
-    public void onResume() {
-        super.onResume();
     }
 }

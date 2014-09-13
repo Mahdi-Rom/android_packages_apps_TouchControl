@@ -27,6 +27,7 @@ import android.view.MenuItem;
 import android.view.SubMenu;
 
 import com.mahdi.touchcontrol.R;
+import com.mahdi.touchcontrol.util.Constants;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -41,6 +42,14 @@ import java.io.InputStream;
 public class FileUtils implements Constants {
 
     private static final String TAG = "FileUtils";
+
+    /**
+     * Do we have touch control at all?
+     */
+    public static boolean hasTouchscreenGestures() {
+        return new File(DT2W2_FILE).exists()
+                || new File(S2W_FILE).exists();
+    }
 
     /**
      * Checks device for SuperUser permission

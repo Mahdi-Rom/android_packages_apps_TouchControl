@@ -79,6 +79,10 @@
     <string name="touch_control_warning_title">Proceed with Caution</string>
     <string name="touch_control_warning">These settings have the potential to cause higher than normal idle battery drain.\n\nWe request you do not complain about battery life if any of these settings have been enabled.</string>
 
+    <!-- No support dialog -->
+    <string name="no_support_title">No support</string>
+    <string name="no_support_warning">The kernel you are using does not support these features.</string>
+
     <!-- General strings -->
     <string name="ok">OK</string>
     <string name="cancel">Cancel</string>
