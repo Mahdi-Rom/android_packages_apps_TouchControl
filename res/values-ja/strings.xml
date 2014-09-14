@@ -18,6 +18,10 @@
     <!-- Title -->
     <string name="touch_control_title">詳細設定</string>
 
+    <!-- Set on boot -->
+    <string name="set_on_boot_title">起動時に適用</string>
+    <string name="set_on_boot_summary">起動時に設定を復元する</string>
+
     <!-- Double tap to wake -->
     <string name="doubletap2wake_title">ダブルタップでウェイク</string>
     <string name="doubletap2wake_summary">画面の任意の場所をダブルタップすることでデバイスをウェイクアップさせる</string>
