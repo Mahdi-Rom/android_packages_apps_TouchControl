@@ -80,6 +80,10 @@
     <string name="touch_control_warning">これらの設定は通常よりも多くのバッテリーを消耗する可能性があります。 
 これらの設定のいずれかが有効になっている場合はバッテリーの消耗に関しての苦情は出さないでください。</string>
 
+    <!-- No support dialog -->
+    <string name="no_support_title">非対応</string>
+    <string name="no_support_warning">お使いのカーネルではこれらの機能はサポートされていません。</string>
+
     <!-- General strings -->
     <string name="ok">OK</string>
     <string name="cancel">キャンセル</string>
