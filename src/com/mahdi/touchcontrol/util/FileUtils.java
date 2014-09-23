@@ -47,7 +47,8 @@ public class FileUtils implements Constants {
      * Do we have touch control at all?
      */
     public static boolean hasTouchscreenGestures() {
-        return new File(DT2W2_FILE).exists()
+        return new File(DT2W_FILE).exists()
+                || new File(DT2W2_FILE).exists()
                 || new File(S2W_FILE).exists();
     }
 
