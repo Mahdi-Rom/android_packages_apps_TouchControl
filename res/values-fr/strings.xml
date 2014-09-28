@@ -16,21 +16,21 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
     <!-- Title -->
-    <string name="touch_control_title">Advanced</string>
+    <string name="touch_control_title">Avancé</string>
 
     <!-- Set on boot -->
     <string name="set_on_boot_title">Définir au démarrage</string>
     <string name="set_on_boot_summary">Paramètres de restauration appliqués au démarrage</string>
 
     <!-- Double tap to wake -->
-    <string name="doubletap2wake_title">Double tap to wake</string>
-    <string name="doubletap2wake_summary">Double tap anywhere to wake the screen</string>
+    <string name="doubletap2wake_title">Double appui pour réveiller</string>
+    <string name="doubletap2wake_summary">Double appui n\'importe où pour réveiller l\'écran</string>
     <string name="doubletap2wake_off">Désactivé</string>
-    <string name="doubletap2wake_bottom">Bottom half of the screen</string>
-    <string name="doubletap2wake_full">Full screen</string>
+    <string name="doubletap2wake_bottom">Moitié inférieure de l\'écran</string>
+    <string name="doubletap2wake_full">Plein écran</string>
 
     <!-- Sweep to wake -->
-    <string name="sweep2wake_title">Sweep to wake</string>
+    <string name="sweep2wake_title">Balayage pour réveiller</string>
     <string name="sweep2wake_off">Désactivé</string>
     <string name="sweep2wake_right">Droite</string>
     <string name="sweep2wake_left">Gauche</string>
@@ -45,39 +45,39 @@
     <string name="sweep2wake_all">Toutes les directions</string>
 
     <!-- Sweep to sleep -->
-    <string name="sweep2sleep_title">Sweep to sleep</string>
+    <string name="sweep2sleep_title">Balayer pour la veille</string>
     <string name="sweep2sleep_off">Désactivé</string>
     <string name="sweep2sleep_right">Droite</string>
     <string name="sweep2sleep_left">Gauche</string>
     <string name="sweep2sleep_right_left">Droite et gauche</string>
 
     <!-- Gestures -->
-    <string name="gestures_title">Wake gestures</string>
-    <string name="gestures_summary">This option only enables the wake gesture funtion, you will need to install Wake Gesture Xposed module to add gesture actions</string>
+    <string name="gestures_title">Reveil par les gestes</string>
+    <string name="gestures_summary">Cette option permet uniquement la fonction de réveil par le geste, vous aurez besoin d\'installer le module Xposed de réveil par les geste pour ajouter des actions gestuelles</string>
 
     <!-- Powerkey suspend -->
-    <string name="powerkeysuspend_title">Power key suspend</string>
-    <string name="powerkeysuspend_summary">Using the power key to turn your screen off will temporarily disable all options</string>
+    <string name="powerkeysuspend_title">Touche d\'alimentation pour suspendre</string>
+    <string name="powerkeysuspend_summary">Utilisation de la touche d\'alimentation pour éteindre votre écran et désactiver temporairement toutes les options</string>
 
     <!-- Wake timeout -->
-    <string name="wake_timeout_title">Wake timeout</string>
-    <string name="wake_timeout_summary">After this timeout options will be temporarily disabled</string>
+    <string name="wake_timeout_title">Délai de réveil</string>
+    <string name="wake_timeout_summary">Après ce délai les options seront temporairement désactivés</string>
 
     <!-- Vibration strength -->
-    <string name="vibration_strength_title">Vibration strength</string>
-    <string name="vibration_strength_summary">Adjust the haptic feedback strength</string>
+    <string name="vibration_strength_title">Force de vibration</string>
+    <string name="vibration_strength_summary">Réglage de la force haptique</string>
 
     <!-- Touch wake -->
-    <string name="touchwake_title">Touch wake</string>
-    <string name="touchwake_summary">If enabled, you will be able to turn the screen on if it times out</string>
+    <string name="touchwake_title">Réveil par contact</string>
+    <string name="touchwake_summary">Si activé, vous serez en mesure de tourner l\'écran pour qu\'il se déconnecte</string>
 
     <!-- Touch wake timeout -->
-    <string name="touchwake_timeout_title">Touch wake timeout</string>
-    <string name="touchwake_timeout_summary">After this timeout options will be temporarily disabled</string>
+    <string name="touchwake_timeout_title">Délai de réveil par contact</string>
+    <string name="touchwake_timeout_summary">Après ce délai les options seront temporairement désactivés</string>
 
     <!-- Warning dialog -->
     <string name="touch_control_warning_title">Procédez avec prudence</string>
-    <string name="touch_control_warning">These settings have the potential to cause higher than normal idle battery drain.\n\nWe request you do not complain about battery life if any of these settings have been enabled.</string>
+    <string name="touch_control_warning">Ces paramètres ont le potentiel de causer la décharge rapide de la batterie.\n\nNous vous demandons de ne pas vous plaindre de la vie de la batterie si l\'un de ces paramètres ont été activées.</string>
 
     <!-- General strings -->
     <string name="ok">OK</string>
