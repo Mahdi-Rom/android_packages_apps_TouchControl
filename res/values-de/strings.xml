@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2014 Mahdi-Rom
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <!-- Title -->
+    <string name="touch_control_title">Erweitert</string>
+
+    <!-- Set on boot -->
+    <string name="set_on_boot_title">Beim Start setzen</string>
+    <string name="set_on_boot_summary">Einstellung nach dem Starten laden</string>
+
+    <!-- Double tap to wake -->
+    <string name="doubletap2wake_title">Wecken durch doppeltes Tippen</string>
+    <string name="doubletap2wake_summary">Doppeltes Tippen auf den Bildschirm</string>
+    <string name="doubletap2wake_off">Aus</string>
+    <string name="doubletap2wake_bottom">Untere Hälfte</string>
+    <string name="doubletap2wake_full">Kompletter Bildschirm</string>
+
+    <!-- Sweep to wake -->
+    <string name="sweep2wake_title">Wecken durch Wischen</string>
+    <string name="sweep2wake_off">Aus</string>
+    <string name="sweep2wake_right">Rechts</string>
+    <string name="sweep2wake_left">Links</string>
+    <string name="sweep2wake_up">Hoch</string>
+    <string name="sweep2wake_down">Runter</string>
+    <string name="sweep2wake_right_left">Rechts und links</string>
+    <string name="sweep2wake_right_up">Rechts und hoch</string>
+    <string name="sweep2wake_right_down">Rechts und runter</string>
+    <string name="sweep2wake_left_up">Links und hoch</string>
+    <string name="sweep2wake_left_down">Links und runter</string>
+    <string name="sweep2wake_up_down">Hoch und runter</string>
+    <string name="sweep2wake_all">Alle Richtungen</string>
+
+    <!-- Sweep to sleep -->
+    <string name="sweep2sleep_title">Abschalten durch Wischen</string>
+    <string name="sweep2sleep_off">Aus</string>
+    <string name="sweep2sleep_right">Rechts</string>
+    <string name="sweep2sleep_left">Links</string>
+    <string name="sweep2sleep_right_left">Rechts und links</string>
+
+    <!-- Gestures -->
+    <string name="gestures_title">Weckgesten</string>
+    <string name="gestures_summary">Diese Funktion aktiviert nur die Weckgesten, du musst zusätzlich das Weckgesten Xposed Module installieren</string>
+
+    <!-- Powerkey suspend -->
+    <string name="powerkeysuspend_title">Deaktivierung durch die Ein/Aus-Taste</string>
+    <string name="powerkeysuspend_summary">Durch Ausschalten des Bildschirms mit der Ein/Aus-Taste werden alle Funktionen vorrübergehend deaktiviert</string>
+
+    <!-- Wake timeout -->
+    <string name="wake_timeout_title">Weckzeitlimit</string>
+    <string name="wake_timeout_summary">Nach diesem Zeitablauf werden die Einstellungen bis zum nächsten Aufwecken deaktiviert</string>
+
+    <!-- Vibration strength -->
+    <string name="vibration_strength_title">Vibrationsstärke</string>
+    <string name="vibration_strength_summary">Anpassen des haptischen Feedbacks</string>
+
+    <!-- Touch wake -->
+    <string name="touchwake_title">Wecken durch Berühren</string>
+    <string name="touchwake_summary">Falls aktiviert kannst du den Bildschrim durch Berühren wieder einschalten</string>
+
+    <!-- Touch wake timeout -->
+    <string name="touchwake_timeout_title">Wecken durch Berührungszeitlimit</string>
+    <string name="touchwake_timeout_summary">Nach diesem Zeitablauf werden die Einstellungen vorrübergehend deaktiviert</string>
+
+    <!-- Warning dialog -->
+    <string name="touch_control_warning_title">Weiter mit Vorsicht!</string>
+    <string name="touch_control_warning">Diese Einstellungen können den Akkuverbrauch stark erhöhen!\n\nBeschwere dich nicht über die Akkulaufzeit, wenn eine dieser Optionen aktiviert ist!</string>
+
+    <!-- No support dialog -->
+    <string name="no_support_title">Keine Unterstützung</string>
+    <string name="no_support_warning">Dein Kernel unterstützt diese Funktionen nicht</string>
+
+    <!-- General strings -->
+    <string name="ok">OK</string>
+    <string name="cancel">Abbrechen</string>
+
+</resources>
