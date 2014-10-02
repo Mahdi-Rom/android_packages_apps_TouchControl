@@ -79,6 +79,10 @@
     <string name="touch_control_warning_title">Procédez avec prudence</string>
     <string name="touch_control_warning">Ces paramètres ont le potentiel de causer la décharge rapide de la batterie.\n\nNous vous demandons de ne pas vous plaindre de la vie de la batterie si l\'un de ces paramètres ont été activées.</string>
 
+    <!-- No support dialog -->
+    <string name="no_support_title">Pas de support</string>
+    <string name="no_support_warning">Le Kernel que vous utilisez ne prend pas en charge ces fonctionnalités.</string>
+
     <!-- General strings -->
     <string name="ok">OK</string>
     <string name="cancel">Annuler</string>
