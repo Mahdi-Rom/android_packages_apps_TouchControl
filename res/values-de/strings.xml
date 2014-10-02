@@ -56,7 +56,7 @@
     <string name="gestures_summary">Diese Funktion aktiviert nur die Weckgesten, du musst zusätzlich das Weckgesten Xposed Module installieren</string>
 
     <!-- Powerkey suspend -->
-    <string name="powerkeysuspend_title">Deaktivierung durch die Ein/Aus-Taste</string>
+    <string name="powerkeysuspend_title">Ein/Aus-Taste</string>
     <string name="powerkeysuspend_summary">Durch Ausschalten des Bildschirms mit der Ein/Aus-Taste werden alle Funktionen vorrübergehend deaktiviert</string>
 
     <!-- Wake timeout -->
